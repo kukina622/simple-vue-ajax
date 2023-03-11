@@ -32,9 +32,6 @@ function toggleTodolistVisible() {
   <hr />
 
 
-
-
-
   <h2>v-model && v-for && v-if </h2>
   <input type="text" v-model="todo" />
   <button @click="appendTodolist">append</button>
