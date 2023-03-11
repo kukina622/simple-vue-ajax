@@ -1,17 +1,15 @@
+<template>
+  <review />
+</template>
+
 <script setup>
-import axios from "axios";
-import { ref } from "vue";
-
-const products = ref([]);
-
-async function fetchAPI() {
-  const res = await axios.get("https://dummyjson.com/products");
-  products.value = res.data.products;
-}
+import api from "./components/api.vue"
+import review from "./components/review.vue"
 
 </script>
 
-<template>
-  <button @click="fetchAPI">fetch api</button>
-  <p>{{ products[0] }}</p>
-</template>
+<style>
+* {
+  font-size: 24px;
+}
+</style>
