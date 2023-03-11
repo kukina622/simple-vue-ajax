@@ -1,5 +1,5 @@
 <template>
-  <review />
+  <api />
 </template>
 
 <script setup>

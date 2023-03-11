@@ -6,9 +6,7 @@ function add() {
 }
 
 const disableAdd = ref(false); // v-bind
-function toggle() {
-  disableAdd.value = !disableAdd.value;
-}
+
 
 // ----------------------------------------------------- //
 const todo = ref(""); // v-model
@@ -18,16 +16,13 @@ const visible = ref(true); // v-if
 function appendTodolist() {
   todolist.value.push(todo.value);
 }
-function toggleTodolistVisible() {
-  visible.value = !visible.value;
-}
 </script>
 
 <template>
   <h1>Vue review</h1>
   <h2>v-bind && v-on</h2>
   <button v-on:click="add" v-bind:disabled="disableAdd">add</button>
-  <button @click="toggle">toggle add</button>
+  <button @click="disableAdd = !disableAdd">toggle add</button>
   <p>counter : {{ counter }}</p>
   <hr />
 
@@ -35,7 +30,7 @@ function toggleTodolistVisible() {
   <h2>v-model && v-for && v-if </h2>
   <input type="text" v-model="todo" />
   <button @click="appendTodolist">append</button>
-  <button @click="toggleTodolistVisible">toggle visible</button>
+  <button @click="visible = !visible">toggle visible</button>
 
   <p>todo: {{ todo }}</p>
   <p>todolist</p>
